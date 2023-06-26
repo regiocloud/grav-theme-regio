@@ -1,0 +1,23 @@
+{% if truncate %}
+    <a href="{{ page.url }}">
+    {{ page.media.images|first }}
+    <h2>{{ page.header.title }}</h2>
+    {{ page.content|safe_truncate(100)|raw }}
+    </a>
+{% else %}
+    <article class="default inside">
+        {% if config.plugins.breadcrumbs.enabled %}
+            {% include "partials/breadcrumbs.html.twig" %}
+        {% endif %}
+        <h1> {{ page.title }} </h1>
+        <div class="news__date-wrapper">
+            <time datetime="{{ page.date|date("c") }}">
+                <span>{{ page.date|date("d") }}</span>
+                <span>{{ page.date|date("M") }}</span>
+                <span>{{ page.date|date("Y") }}</span>
+            </time>
+        </div>
+        {{ page.media.images|first }}
+        {{ page.content|raw }}
+    </article>
+{% endif %}

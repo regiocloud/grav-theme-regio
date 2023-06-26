@@ -1,0 +1,36 @@
+.logowall{
+    h2{
+        color: $color-blue;
+    }
+    .logowall__content{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        h4{
+            color: $color-blue;
+        }
+
+        .logowall__content__single-logo{
+            width: 49%;
+            display: flex;
+            flex-wrap: wrap;
+            text-decoration: none;
+            color: $color-dark-grey;
+            margin: 1rem 0;
+
+            .logowall__content__single-logo__title{
+                width: fit-content;
+            }
+
+            @media screen and (max-width: $breakpoint) {
+                width: 100%;
+            }
+
+            svg, img{
+                width: 3rem;
+                margin-right: 1rem;
+            }
+        }
+    }
+}

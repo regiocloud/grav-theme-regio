@@ -1,0 +1,41 @@
+<section id="{{ page.header.title }}" class="hero">
+    <video class="hero__video" autoplay playsinline muted loop>
+        <source src="{{ url('theme://dist/videos-compiled/hero.mp4') }}">
+    </video>
+    <div class="hero__banner inside">
+        {{ page.content | raw }}
+        {% for event in page.header.button %}
+            <div class="hero__banner__button-wrapper">
+                <div class="hero__banner__button ">
+                    <a href="{{ event.link }}" title="{{ event.name }}" rel="noopener" target="_blank">
+                        Treffen Sie uns vom {{ event.date_from }} - {{ event.date_until }} auf dem {{ event.name }} in {{ event.location }}
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+            {% set news_posts = page.find('/news').children %}
+            {% for slide in news_posts %}
+                    <a href="{{ slide.url }}" title="{{ slide.title }}" class="swiper-slide">
+                        {% for image in slide.media.images %}
+                            {{ image.html|raw }}
+                        {% endfor %}
+                        <div class="swiper-slide__content">
+                            <h2>{{ slide.title }}</h2>
+                        </div>
+                    </a>
+            {% endfor %}
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div> 
+</section>

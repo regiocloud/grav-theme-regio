@@ -1,0 +1,12 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <article class="default inside">
+        <div class="default__headline-wrapper">
+        {% for svg in page.media.files %} {{ svg|raw }} {% endfor %}
+        {% for image in page.media.images %} {{ image|raw }} {% endfor %} 
+        <h1>{{ page.title }}</h1>
+        </div>
+        {{ page.content|raw }}
+    </article>
+{% endblock %}

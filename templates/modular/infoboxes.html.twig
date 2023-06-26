@@ -1,0 +1,51 @@
+<section id="{{ page.header.title }}" class="infoboxes">
+    <div class="infoboxes__content inside">
+        <div class="infoboxes__content__text">
+            {{ page.content | raw }}
+        </div>
+        <div class="infoboxes__content__boxes">
+            {% for svg in page.media.files %}
+                {% if svg.meta.link %}
+                    <a href="{{ svg.meta.link }}" class="infoboxes__content__boxes__single-box">
+                        {{ svg|raw }}
+                    <h4> {{ svg.meta.title }} </h4>
+                    <p>{{ svg.meta.description }}</p>
+                    </a>
+                {% else %}
+                    <div class="infoboxes__content__boxes__single-box">
+                        {{ svg|raw }}
+                        <h4> {{ svg.meta.title }} </h4>
+                        <p>{{ svg.meta.description }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% for image in page.media.images %}
+                {% if image.meta.link %}
+                    <a href="{{ image.meta.link }}" class="infoboxes__content__boxes__single-box">
+                        {{ image|raw }}
+                    <h4> {{ image.meta.title }} </h4>
+                    <p>{{ image.meta.description }}</p>
+                    </a>
+                {% else %}
+                    <div class="infoboxes__content__boxes__single-box">
+                        <h4> {{ image.meta.title }} </h4>
+                       <p> {{ image.meta.description }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% for box in page.header.boxes %}
+                {% if box.link %}
+                    <a href="{{ box.link }}" class="infoboxes__content__boxes__single-box">
+                    <h4> {{ box.title }} </h4>
+                    <p>{{ box.text }}</p>
+                    </a>
+                {% else %}
+                    <div class="infoboxes__content__boxes__single-box">
+                        <h4> {{ box.title }} </h4>
+                       <p> {{ box.text }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

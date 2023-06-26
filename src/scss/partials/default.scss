@@ -1,0 +1,18 @@
+.default{
+
+    .default__headline-wrapper{
+        display: flex;
+
+        img{
+            width: auto;
+            height: 2.7rem;
+            margin-right: 1rem;
+        }
+    }
+
+    img{
+        max-height: 25rem;
+        width: 100%;
+        object-fit: cover;
+    }
+}

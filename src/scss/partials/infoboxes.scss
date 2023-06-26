@@ -1,0 +1,72 @@
+.infoboxes{
+    background: linear-gradient(180deg, rgba(121,131,140,0.9) 0%, rgba(121,131,140,0.9) 40%, rgba(0,212,255,0) 100%);
+    .infoboxes__content__text{
+        color: $color-white;
+        padding: 1rem 0;
+    }
+
+    .infoboxes__content__boxes{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .infoboxes__content__boxes__single-box{
+            border-radius: $border-radius;
+            background-color: $color-white;
+            width: 20%;
+            min-height: 20vh; 
+            margin: 1rem 0;
+            padding: 1rem;
+            box-shadow: 0 4px 10px 0 $color-dark-grey;
+            transition: $transition;
+            text-decoration: none;
+            display: flex; 
+            flex-wrap: wrap;
+            justify-content: left;
+
+            img{
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 1rem;
+                // filter: grayscale(1);
+            }
+
+            h4{
+                transition: $transition;
+                width: fit-content;
+                height: fit-content;
+            }
+
+            p{
+                width: 100%;
+                height: 100%;
+                color: $color-dark-grey;
+                transition: $transition;
+            }
+
+            &:hover, &:focus{
+                background-color: $color-blue;
+                color: $color-white;
+
+                h4{
+                    color: $color-white;
+                }
+                p{
+                    color:$color-white;
+                }
+            }
+
+            @media screen and (max-width: $breakpoint) {
+                width: 45%;
+            }
+
+            @media screen and (max-width: ($breakpoint - 200px)) {
+                width: 100%;
+            }
+
+            h4{
+                color: $color-blue;
+            }
+        }
+    }
+}

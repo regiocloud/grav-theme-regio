@@ -1,0 +1,51 @@
+title: Events
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Inhalt
+
+          fields:
+            header.events:
+              type: section
+              title: Events
+              underline: true
+
+              fields:
+                header.eventlist:
+                  type: list
+                  fields:
+                    .name:
+                      type: text
+                      label: Name
+                      validate:
+                        required: true
+                    .location:
+                      type: text
+                      label: Location
+                      validate:
+                        required: true
+                    .start_date:
+                      type: datetime
+                      label: Start
+                      format: d.m.Y
+                      validate:
+                        required: true
+                    .end_date:
+                      type: datetime
+                      label: Ende
+                      format: d.m.Y
+                      validate:
+                        required: true
+                    .link:
+                      type: text
+                      label: Website

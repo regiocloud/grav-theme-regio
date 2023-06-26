@@ -1,0 +1,18 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <article class="thankyou inside">
+        {% if form is null %}
+            {% set form = grav.session.getFlashObject('form') %}
+        {% endif  %}
+        {{ content|raw }}
+
+        {% if form %}
+            {% include 'partials/form-messages.html.twig' %}
+            <p>{{ 'PLUGIN_FORM.DATA_SUMMARY'|t }}</p>
+            {% include "forms/data.html.twig" %}
+        {% else %}
+            <div class="notices warning yellow"><p>{{ 'PLUGIN_FORM.NO_FORM_DATA'|t }}</p></div>
+        {% endif %}
+    </article>
+{% endblock %}

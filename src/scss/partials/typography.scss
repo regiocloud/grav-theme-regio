@@ -1,0 +1,86 @@
+$font-size-regular: 1rem;
+$font-size-biggest: 2.5rem;
+$font-size-biggest-mobile: calc(1.375rem + 1.5vw);
+$font-size-big: 1.25rem;
+$font-size-big-mobile: calc(1.325rem);
+
+body{
+    font-family: $font-family-regular;
+    letter-spacing: .5px;
+    line-height: 1.5;
+
+    h1, h2, h3, h4{
+        font-family: $font-family-bold;
+        width: 100%;
+        text-align: left;
+        line-height: 1.2;
+    }
+
+    h1{
+        color: $color-white;
+        background-color: $color-blue;
+        width: fit-content;
+        border-radius: $border-radius;
+        margin-top: 0;
+    }
+
+    .default{
+
+        h1{
+            padding: .5rem;
+        }
+
+        h2{
+            margin: 2rem 0 0 0;
+        }
+    }
+
+    .module{
+    
+        h1, h3{
+            font-size: $font-size-biggest;
+    
+            @media screen and (max-width: $breakpoint) {
+                font-size: $font-size-biggest-mobile;
+            }
+        }
+
+        h1{
+            padding: 1.5rem;
+        }
+    
+        h2, h4{
+            font-size: $font-size-big;
+    
+            @media screen and (max-width: $breakpoint) {
+                font-size: $font-size-big-mobile;
+            }
+        }
+    
+        h2{
+            margin-bottom: 0;
+        }
+    
+        h3{
+            margin: 0 0 1rem 0;
+        }
+    
+        h4{
+            margin: 0 0 .5rem 0;
+        }
+    }
+
+    p, label{
+        a{
+            color: $color-dark-grey;
+            transition: $transition;
+
+            &:hover{
+                color: $color-blue;
+            }
+            &:focus{
+                color: $color-blue;
+            }
+        }
+    }
+}

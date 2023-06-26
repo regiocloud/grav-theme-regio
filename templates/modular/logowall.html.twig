@@ -1,0 +1,22 @@
+<section id="{{ page.header.title }}" class="logowall inside">
+    <div class="logowall__headlines">
+        <h2>{{ page.header.h2 }}</h2>
+        <h3>{{ page.header.h3 }}</h3>
+    </div>
+    <div class="logowall__content">
+        {% for svg in page.media.files %}
+            <a href="{{ svg.meta.link }}" target="_blank" ref="noopener" class="logowall__content__single-logo">
+                {{ svg|raw }}
+                <h4 class="logowall__content__single-logo__title">{{ svg.meta.title }}</h4>
+                <p class="logowall__content__single-logo__description">{{ svg.meta.description }}</p>
+            </a>
+            {% endfor %}
+        {% for image in page.media.images %}
+        <a href="{{ image.meta.link }}" target="_blank" ref="noopener" class="logowall__content__single-logo">
+            {{ image.html|raw }}
+            <h4 class="logowall__content__single-logo__title">{{ image.meta.title }}</h4>
+            <p class="logowall__content__single-logo__description">{{ image.meta.description }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>

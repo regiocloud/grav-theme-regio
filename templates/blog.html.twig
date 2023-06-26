@@ -1,0 +1,16 @@
+{% extends "partials/base.html.twig" %}
+
+{% set collection = page.collection() %}
+
+{% block content %}
+    <article class="news inside">
+        <h1>{{ page.title }}</h1>
+        <ul class="news__item-list">
+            {% for child in collection %}
+                <li class="news__item-list__item-preview">
+                    {% include 'partials/blog_item.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
+                </li>
+            {% endfor %}
+        </ul>
+    </article>    
+{% endblock %}

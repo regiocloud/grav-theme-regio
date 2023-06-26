@@ -1,0 +1,9 @@
+<section id="{{ page.header.title }}" class="contact inside">
+    <div class="contact__content">
+        <h2>{{ page.title }}</h2>
+        {{ page.content | raw }}
+    </div>
+    <div class="contact__form-wrapper">
+        {% include "forms/form.html.twig" %}
+    </div>
+</section>

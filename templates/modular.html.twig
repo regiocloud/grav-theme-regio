@@ -1,0 +1,12 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {% for module in page.collection() %}
+        <article class="module"{% if module.header.animation %} data-aos="{{ module.header.animation }}" {% endif %}>
+            <div id="{{ module.header.title }}" class="anchor"></div>
+            {{ module.content|raw }}
+        </article>
+    {% endfor %}
+{% endblock %}
+
+

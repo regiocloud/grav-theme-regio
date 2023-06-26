@@ -1,0 +1,66 @@
+.quote{
+    background-color: $color-blue;
+    color: $color-white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    border-radius: $border-radius;
+
+    @media screen and (max-width: $breakpoint) {
+        justify-content: center;
+    }
+
+    .quote__image{
+        width: 29%;
+        max-width: 20rem;
+        height: 100%;
+        clip-path: polygon(100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%, 25% 6.7%, 75% 6.7%);
+
+        img{
+            
+        }
+
+        @media screen and (max-width:$breakpoint){
+            width: 100%;
+        }
+    }
+
+    .quote__content{
+        width: 69%;
+        font-family: $font-family-bold;
+        font-size: $font-size-big;
+
+        @media screen and (max-width:$breakpoint){
+            width: 100%;
+            font-size: $font-size-big-mobile;
+        }
+
+        .quote__content__author{
+            font-family: $font-family-light;
+            font-size: $font-size-regular;
+        }
+        .quote__content__author-socials{
+            list-style: none;
+            padding: 0;
+            display: flex;
+
+            li{
+                margin-right: 1rem;
+                
+                a{
+                    text-decoration: none;
+                    color: $color-white;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    svg{
+                        width: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

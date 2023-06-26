@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
+    {% include 'partials/metadata.html.twig' %}
+    {% include "partials/favicons.html.twig" %}
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+{% endblock head %}
+
+{% block stylesheets %}
+    {% do assets.addCss('theme://dist/css-compiled/main.css') %}
+{% endblock %}
+
+{% block javascripts %}
+    {% do assets.addJs('jquery', 101) %}
+    {% do assets.addJs('theme://dist/js/base.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://dist/js/mobile-nav.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://dist/js/aos.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://dist/js/swiper-bundle.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://dist/js/swiper-config.js', {group:'bottom'}) %}
+{% endblock %}
+
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+</head>
+<body id="body" class="preload">
+    <header id="header">
+    {% include 'partials/header.html.twig' %}
+    </header>
+    <main class="content">
+    {% block content %}{% endblock %}
+    </main>
+    <footer id="footer">
+    {% block footer %}
+        {% include 'partials/footer.html.twig' %}
+    {% endblock %}
+    </footer>
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+</body>
+</html>

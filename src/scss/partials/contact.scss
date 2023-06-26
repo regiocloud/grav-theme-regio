@@ -1,0 +1,92 @@
+.contact{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    h2{
+        color: $color-blue;
+    }
+    
+
+    .contact__content{
+        width: 49%;
+
+        @media screen and (max-width:$breakpoint){
+            width: 100%;
+        }
+    }
+    .contact__form-wrapper{
+        width: 49%;
+        @media screen and (max-width:$breakpoint){
+            width: 100%;
+        }
+
+        .contact__form{
+            .form-field{
+                width: 100%;
+
+                .form-label{
+                    margin: 1rem 0 .5rem 0;
+                }
+                
+                .form-data{
+                    .form-input-wrapper{
+                        input{
+                            width: 100%;
+                            padding: 1rem;
+                            box-sizing: border-box;
+                            font-family: $font-family-regular;
+                            font-size: $font-size-regular;
+                            border: .5px solid;
+                            border-radius: $border-radius;
+                        }
+
+                        .approval{
+                            width: fit-content;
+                        }
+                    }
+                    .form-textarea-wrapper{
+                        textarea{
+                            height: 30vh;
+                            width: 100%;
+                            padding: 1rem;
+                            box-sizing: border-box;
+                            resize: none;
+                            font-family: $font-family-regular;
+                            font-size: $font-size-regular;
+                            border: .5px solid;
+                            border-radius: $border-radius;
+                        }
+                    }
+                }
+            }
+        }
+
+        .buttons{
+            .button{
+                padding: 1rem;
+                box-sizing: border-box;
+                background-color: $color-blue;
+                color: $color-white;
+                border-radius: .5rem;
+                border: 1px solid rgba(255,255,255,0);
+                transition: $transition;
+                cursor: pointer;
+                margin-top: 1rem;
+                width: 100%;
+                font-size: $font-size-big;
+                
+                &:hover{
+                    background-color: $color-white;
+                    border: 1px solid $color-blue;
+                    color: $color-blue;
+                }
+                &:focus{
+                    background-color: $color-white;
+                    border: 1px solid $color-blue;
+                    color: $color-blue;
+                }
+            }
+        }
+    }
+}

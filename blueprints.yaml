@@ -1,0 +1,13 @@
+name: REGIO
+slug: regio
+type: theme
+version: 1.0
+description: Theme for the regio.digital website
+author:
+  name: Jonathan Schweppe
+  email: schweppe@23technologies.cloud
+keywords: grav, theme, etc
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }

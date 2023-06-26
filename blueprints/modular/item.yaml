@@ -1,0 +1,4 @@
+title: News
+'@extends':
+    type: default
+    context: blueprints://pages
