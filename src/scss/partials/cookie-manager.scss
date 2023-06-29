@@ -1,0 +1,72 @@
+.cc-window.cc-floating{
+    max-width: 100%;
+    #tecart-cookie-banner{
+        
+        a{
+            color: $color-blue;
+        }
+        .cc-header{
+            color: $color-blue;
+            background: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .cc-btn{
+            margin: 0 .5rem 0 0;
+            text-decoration: none;
+            transition: $transition;
+            
+            
+            @media screen and (max-width:538px){
+                margin-top: .5rem!important;
+            }
+        }
+    
+        .cc-allow{
+            background-color: $color-blue;
+        }
+    }
+}
+
+#tcb-settings-modal{
+    
+
+    .cc-btn{
+        
+        
+    }
+    .tcb-settings-modal-header{
+        .cc-header{
+            padding-left: 0;
+            background: none;
+            color: $color-blue;
+            
+            
+        }
+    }
+
+    input:checked + .tcb-slider {
+        background-color: $color-blue;
+    }
+
+    #tcbSettings{
+        
+    }
+}
+  
+.cc-revoke.cc-bottom.cc-left{
+    background: url('../images-compiled/converted/cookies.webp');
+    background-size: contain;
+    width: 1.3rem;
+    height: 1.3rem;
+    left: 1.25%;
+    bottom: 1rem;
+    transform: translate(0);
+    border-radius: 1rem;
+    background-color: unset!important;
+    transition: $transition;
+
+    @media screen and (max-width:$breakpoint) {
+        left: 5%;
+    }
+}
