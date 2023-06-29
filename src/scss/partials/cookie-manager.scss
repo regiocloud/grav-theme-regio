@@ -1,6 +1,7 @@
 .cc-window.cc-floating{
     max-width: 100%;
     font-family: $font-family-regular;
+    font-size: $font-family-regular;
     #tecart-cookie-banner{
         .cc-header{
             font-family: $font-family-bold;
@@ -35,7 +36,8 @@
 
 #tcb-settings-modal{
     .tcb-switch .tcb-script-switch {
-        padding: 0!important;
+        height: 11px!important;
+        width: 20px!important;
     }
     
     .cc-btn{

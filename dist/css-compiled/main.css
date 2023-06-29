@@ -5410,6 +5410,7 @@ swiper-container .swiper-notification {
 .cc-window.cc-floating {
   max-width: 100%;
   font-family: "greycliff-cf-medium";
+  font-size: "greycliff-cf-medium";
 }
 .cc-window.cc-floating #tecart-cookie-banner .cc-header {
   font-family: "greycliff-cf-bold";
@@ -5439,7 +5440,8 @@ swiper-container .swiper-notification {
 }
 
 #tcb-settings-modal .tcb-switch .tcb-script-switch {
-  padding: 0 !important;
+  height: 11px !important;
+  width: 20px !important;
 }
 #tcb-settings-modal .tcb-settings-modal-header .cc-header {
   padding-left: 0;
