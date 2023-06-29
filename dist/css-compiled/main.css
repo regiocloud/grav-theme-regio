@@ -5431,6 +5431,7 @@ swiper-container .swiper-notification {
 }
 .cc-window.cc-floating #tecart-cookie-banner .cc-allow {
   background-color: rgb(18, 123, 172);
+  border-color: rgb(18, 123, 172);
 }
 
 #tcb-settings-modal .tcb-settings-modal-header .cc-header {
