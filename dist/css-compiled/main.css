@@ -5450,6 +5450,7 @@ swiper-container .swiper-notification {
 #tcb-settings-modal #tcbSettings {
   font-family: "greycliff-cf-medium";
   font-size: "greycliff-cf-medium";
+  line-height: 1rem;
 }
 #tcb-settings-modal #tcbSettings .tcb-switch {
   height: 11px !important;

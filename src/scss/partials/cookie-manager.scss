@@ -42,7 +42,7 @@
             background: none;
             color: $color-blue;
             
-            
+
         }
     }
 
@@ -53,6 +53,7 @@
     #tcbSettings{
         font-family: $font-family-regular;
         font-size: $font-family-regular;
+        line-height:1rem;
         .tcb-switch{
             height: 11px!important;
             width: 20px!important;
