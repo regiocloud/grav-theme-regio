@@ -2,6 +2,9 @@
     max-width: 100%;
     font-family: $font-family-regular;
     #tecart-cookie-banner{
+        .cc-header{
+            font-family: $font-family-bold;
+        }
         
         a{
             color: $color-blue;
@@ -31,8 +34,10 @@
 }
 
 #tcb-settings-modal{
+    .tcb-switch .tcb-script-switch {
+        padding: 0;
+    }
     
-
     .cc-btn{
         
         
@@ -71,8 +76,4 @@
     @media screen and (max-width:$breakpoint) {
         left: 5%;
     }
-}
-
-.tcb-switch .tcb-script-switch {
-    padding: 0;
 }

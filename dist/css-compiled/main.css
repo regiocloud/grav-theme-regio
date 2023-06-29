@@ -5411,6 +5411,9 @@ swiper-container .swiper-notification {
   max-width: 100%;
   font-family: "greycliff-cf-medium";
 }
+.cc-window.cc-floating #tecart-cookie-banner .cc-header {
+  font-family: "greycliff-cf-bold";
+}
 .cc-window.cc-floating #tecart-cookie-banner a {
   color: rgb(18, 123, 172);
 }
@@ -5435,6 +5438,9 @@ swiper-container .swiper-notification {
   border-color: rgb(18, 123, 172);
 }
 
+#tcb-settings-modal .tcb-switch .tcb-script-switch {
+  padding: 0;
+}
 #tcb-settings-modal .tcb-settings-modal-header .cc-header {
   padding-left: 0;
   background: none;
@@ -5459,10 +5465,6 @@ swiper-container .swiper-notification {
   .cc-revoke.cc-bottom.cc-left {
     left: 5%;
   }
-}
-
-.tcb-switch .tcb-script-switch {
-  padding: 0;
 }
 
 [data-aos][data-aos][data-aos-duration="50"], body[data-aos-duration="50"] [data-aos] {
