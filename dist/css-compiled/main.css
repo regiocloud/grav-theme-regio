@@ -5447,6 +5447,10 @@ swiper-container .swiper-notification {
 #tcb-settings-modal input:checked + .tcb-slider {
   background-color: rgb(18, 123, 172);
 }
+#tcb-settings-modal #tcbSettings {
+  font-family: "greycliff-cf-medium";
+  font-size: "greycliff-cf-medium";
+}
 #tcb-settings-modal #tcbSettings .tcb-switch {
   height: 11px !important;
   width: 20px !important;
