@@ -5439,10 +5439,6 @@ swiper-container .swiper-notification {
   border-color: rgb(18, 123, 172);
 }
 
-#tcb-settings-modal .tcb-switch .tcb-script-switch {
-  height: 11px !important;
-  width: 20px !important;
-}
 #tcb-settings-modal .tcb-settings-modal-header .cc-header {
   padding-left: 0;
   background: none;
@@ -5451,6 +5447,11 @@ swiper-container .swiper-notification {
 #tcb-settings-modal input:checked + .tcb-slider {
   background-color: rgb(18, 123, 172);
 }
+#tcb-settings-modal #tcbSettings .tcb-switch .tcb-script-switch {
+  height: 11px !important;
+  width: 20px !important;
+}
+
 .cc-revoke.cc-bottom.cc-left {
   background: url("../images-compiled/converted/cookies.webp");
   background-size: contain;

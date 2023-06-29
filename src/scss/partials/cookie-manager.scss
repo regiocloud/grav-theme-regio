@@ -35,15 +35,7 @@
 }
 
 #tcb-settings-modal{
-    .tcb-switch .tcb-script-switch {
-        height: 11px!important;
-        width: 20px!important;
-    }
-    
-    .cc-btn{
         
-        
-    }
     .tcb-settings-modal-header{
         .cc-header{
             padding-left: 0;
@@ -59,7 +51,10 @@
     }
 
     #tcbSettings{
-        
+        .tcb-switch .tcb-script-switch {
+            height: 11px!important;
+            width: 20px!important;
+        }
     }
 }
   
