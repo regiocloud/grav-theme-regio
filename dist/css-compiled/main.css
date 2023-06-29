@@ -5409,6 +5409,7 @@ swiper-container .swiper-notification {
 
 .cc-window.cc-floating {
   max-width: 100%;
+  font-family: "greycliff-cf-medium";
 }
 .cc-window.cc-floating #tecart-cookie-banner a {
   color: rgb(18, 123, 172);
@@ -5458,6 +5459,10 @@ swiper-container .swiper-notification {
   .cc-revoke.cc-bottom.cc-left {
     left: 5%;
   }
+}
+
+.tcb-switch .tcb-script-switch {
+  padding: 0;
 }
 
 [data-aos][data-aos][data-aos-duration="50"], body[data-aos-duration="50"] [data-aos] {

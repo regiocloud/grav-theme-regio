@@ -1,5 +1,6 @@
 .cc-window.cc-floating{
     max-width: 100%;
+    font-family: $font-family-regular;
     #tecart-cookie-banner{
         
         a{
@@ -70,4 +71,8 @@
     @media screen and (max-width:$breakpoint) {
         left: 5%;
     }
+}
+
+.tcb-switch .tcb-script-switch {
+    padding: 0;
 }
