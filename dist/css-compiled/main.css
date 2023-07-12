@@ -3049,6 +3049,7 @@ img {
   background-color: rgb(250, 252, 255);
   z-index: 99999;
   padding: 0.5rem 0;
+  transition: 450ms ease-in-out;
 }
 #header .header-wrapper {
   display: flex;
