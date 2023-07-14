@@ -1,37 +1,29 @@
-title: Page
+title: 'Infoboxes'
 '@extends':
     type: default
     context: blueprints://pages
 
 form:
-  fields:
-    tabs:
-      type: tabs
-      active: 1
+    fields:
+        tabs:
+            type: tabs
+            active: 1
 
-      fields:
-        content:
-          type: tab
-          title: Content
+            fields:
+                content:
+                    type: tab
 
-          fields:
-            header.boxes:
-              type: section
-              title: Boxes
-              underline: true
-
-              fields:
-                header.boxes.box:
-                  name: box
-                  type: list
-                  label: Boxes
-                  fields:
-                    type: list
-                    label: Box
                     fields:
-                      .title:
-                        type: text
-                        label: Title
-                      .text:
-                        type: textarea
-                        label: Text
+                        header.boxes:
+                            name: boxes
+                            type: list
+                            style: vertical
+                            label: Boxen
+                            fields:
+                                .title:
+                                    type: text
+                                    label: Titel
+                                .text:
+                                    type: textarea
+                                    label: Text
+                                    size: long
