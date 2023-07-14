@@ -21,6 +21,4 @@ form:
                             name: author_socials
                             type: list
                             label: Soziale Netzwerke des Autors
-                            .:
-                              type: text
                             value_only: true
