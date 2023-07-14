@@ -24,4 +24,4 @@ form:
                             fields:
                                 .:
                                     type: text
-                            value_only: true
+                                    label: URL / E-Mail
