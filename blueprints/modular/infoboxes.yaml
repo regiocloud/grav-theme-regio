@@ -1,0 +1,40 @@
+title: Page
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.box:
+              type: section
+              title: Boxes
+              underline: true
+
+              fields:
+                header.box.items:
+                  name: boxes
+                  type: list
+                  label: Boxes
+                  fields:
+                    type: list
+                    label: Box
+                    fields:
+                      .title:
+                        type: text
+                        label: Title
+                      .text:
+                        type: textarea
+                        label: Text
+
+              validate:
+                type: json
