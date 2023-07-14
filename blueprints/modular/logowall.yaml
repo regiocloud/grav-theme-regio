@@ -1,0 +1,22 @@
+title: 'Logowall'
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+
+            fields:
+                content:
+                    type: tab
+
+                    fields:
+                        header.h2:
+                            type: text
+                            label: Überschrift H2
+                        header.h3:
+                            type: text
+                            label: Überschrift H3
