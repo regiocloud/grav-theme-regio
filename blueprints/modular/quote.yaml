@@ -21,7 +21,7 @@ form:
                             name: author_socials
                             type: list
                             label: Soziale Netzwerke des Autors
-                            fields:
+                            field:
                                 .:
                                     type: text
                                     label: URL / E-Mail
