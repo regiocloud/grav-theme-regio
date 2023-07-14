@@ -35,6 +35,3 @@ form:
                       .text:
                         type: textarea
                         label: Text
-
-              validate:
-                type: json
