@@ -1,0 +1,23 @@
+title: 'Zitat'
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+
+            fields:
+                content:
+                    type: tab
+
+                    fields:
+                        header.author:
+                            type: text
+                            label: Autor
+                        header.author_socials:
+                            name: author_socials
+                            type: list
+                            label: Soziale Netzwerke des Autors
