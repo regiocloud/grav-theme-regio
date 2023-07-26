@@ -15,4 +15,13 @@
         width: 100%;
         object-fit: cover;
     }
+    .swiper{
+        .swiper-wrapper{
+            .swiper-slide{
+                img{
+                    height: 15rem;
+                }
+            }
+        }
+    }
 }

@@ -3,10 +3,49 @@
 {% block content %}
     <article class="default inside">
         <div class="default__headline-wrapper">
-        {% for svg in page.media.files %} {{ svg|raw }} {% endfor %}
-        {% for image in page.media.images %} {{ image|raw }} {% endfor %} 
-        <h1>{{ page.title }}</h1>
+            {% if page.header.image_icon == true %}
+                {% for svg in page.media.files %} {{ svg|raw }} {% endfor %}
+                {% for image in page.media.images %} {{ image|raw }} {% endfor %} 
+            {% endif %}
+            <h1>{{ page.title }}</h1>
         </div>
         {{ page.content|raw }}
+        {% if page.header.swiper == true and (page.media.images or page.media.files) %}
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                {% for svg in page.media.files %}
+                    <div class="swiper-slide">
+                        {% if svg.metadata.lightbox == true %}
+                            <a class="glightbox" href="{{ svg.url }}" alt="{{ svg.metadata.alt }}">
+                                {{ svg|raw }}
+                            </a>
+                        {% else %}
+                        {{ svg|raw }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                {% for image in page.media.images %}
+                    <div class="swiper-slide">
+                        {% if image.metadata.lightbox == true %}
+                            <a class="glightbox" href="{{ image.url }}" alt="{{ image.metadata.alt }}">
+                                {{ image|raw }}
+                            </a>
+                        {% else %}
+                        {{ image|raw }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        {% endif %}
     </article>
 {% endblock %}
