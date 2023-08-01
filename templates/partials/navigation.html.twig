@@ -1,21 +1,24 @@
 <ul>
-{% for module in page.find('/home').collection %}
-{% if module.header.visible %}
     <li>
-        <a title="{{ module.title }}" class="nav-link" href="{{ home_url }}#{{ module.menu }}">
-        {{ module.menu }}
-        </a>
+        <a href="{{ home_url }}" title="Home" class="nav-link">Home</a>
     </li>
-{% endif %}
-{% endfor %}
 {% for page in pages.children %}
-{% if page.visible %}
-    <li>
-        <a title="{{ page.title }}" class="nav-link" href="{{ home_url }}{{ page.menu }}">
-        {{ page.menu }}
-        </a>
-    </li>
-{% endif %}
+    {% if page.visible %}
+        <li>
+            <a title="{{ page.title }}" class="nav-link" href="{{ home_url }}{{ page.menu }}">
+            {{ page.menu }}
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}
+{% for module in page.find('/home').collection %}
+    {% if module.header.visible %}
+        <li>
+            <a title="{{ module.title }}" class="nav-link" href="{{ home_url }}#{{ module.menu }}">
+            {{ module.menu }}
+            </a>
+        </li>
+    {% endif %}
 {% endfor %}
     <li>
         <a title="Login" class="login-button nav-link" href="https://auth.regio.digital/">Login</a>
