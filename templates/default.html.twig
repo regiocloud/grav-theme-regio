@@ -8,7 +8,7 @@
                 {% for image in page.media.images %} {{ image|raw }} {% endfor %} 
             {% endif %}
             <h1>{{ page.title }}</h1>
-        </div>
+        </div>        
         {{ page.content|raw }}
         {% if page.header.swiper == true and (page.media.images or page.media.files) %}
         <!-- Slider main container -->
