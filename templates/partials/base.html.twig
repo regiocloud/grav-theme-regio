@@ -13,6 +13,9 @@
 
 {% block stylesheets %}
     {% do assets.addCss('theme://dist/css-compiled/main.css') %}
+    {% if page.header.bootstrap == true %}
+        {% do assets.addCss('theme://src/css/bootstrap.css') %}
+    {% endif %}
 {% endblock %}
 
 {% block javascripts %}
