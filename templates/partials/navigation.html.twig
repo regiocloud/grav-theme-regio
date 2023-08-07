@@ -2,6 +2,42 @@
     <li>
         <a href="{{ home_url }}" title="Home" class="nav-link">Home</a>
     </li>
+    {# <li class="submenu-init"><a href="#">Services</a>
+        <ul class="submenu">
+            <li class="submenu2-init"><a href="#">Büro</a>
+                <ul class="submenu2">
+                    <li><a href="#">Kimai</a></li>
+                    <li><a href="#">Nextcloud</a></li>
+                    <li><a href="#">Harbor</a></li>
+                </ul>
+            </li>
+            <li class="submenu2-init"><a href="#">Kubernetes</a>
+                <ul class="submenu2">
+                    <li><a href="#">Gardener</a></li>
+                    <li><a href="#">OpenStack</a></li>
+                    <li><a href="#">Shoots</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="submenu-init"><a href="#">Rechenzentrum</a>
+        <ul class="submenu">
+            <li class="submenu2-init"><a href="#">Infrastruktur</a>
+                <ul class="submenu2">
+                    <li><a href="#">Haus</a></li>
+                    <li><a href="#">Wohnung</a></li>
+                    <li><a href="#">Zimmer</a></li>
+                </ul>
+            </li>
+            <li class="submenu2-init"><a href="#">Clouds</a>
+                <ul class="submenu2">
+                    <li><a href="#">Server</a></li>
+                    <li><a href="#">Kabel</a></li>
+                    <li><a href="#">Binder</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li> #}
 {% for page in pages.children %}
     {% if page.visible %}
         <li>
@@ -20,24 +56,6 @@
         </li>
     {% endif %}
 {% endfor %}
-    {# <li class="submenu-init"><a href="#">Testinho</a>
-        <ul class="submenu">
-            <li class="submenu2-init"><a href="#">Gruppe</a>
-                <ul class="submenu2">
-                    <li><a href="#">Seite 1</a></li>
-                    <li><a href="#">Seite 2</a></li>
-                    <li><a href="#">Seite 3</a></li>
-                </ul>
-            </li>
-            <li class="submenu2-init"><a href="#">Gruppe</a>
-                <ul class="submenu2">
-                    <li><a href="#">Seite 4</a></li>
-                    <li><a href="#">Seite 5</a></li>
-                    <li><a href="#">Seite 6</a></li>
-                </ul>
-            </li>
-        </ul>
-    </li> #}
     <li>
         <a title="Login" class="login-button nav-link" href="https://auth.regio.digital/">Login</a>
     </li>

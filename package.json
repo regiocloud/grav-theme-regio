@@ -12,6 +12,7 @@
   "author": "Jonathan Schweppe",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.3.1",
     "browser-sync": "^2.27.5",
     "gulp-sass": "^5.0.0",
     "gulp-webp": "^4.0.0",

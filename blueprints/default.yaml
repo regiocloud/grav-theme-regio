@@ -1,36 +1,33 @@
-title: Page
+title: default
 '@extends':
     type: default
     context: blueprints://pages
 
 form:
   fields:
-      tabs:
-          type: tabs
-          active: 1
-
+    tabs:
       fields:
+        content:
           type: tab
-          title: Fields
-
+          title: Inhalt
           fields:
-              header.image_icon:
-                  type: toggle
-                  label: Image Icon
-                  highlight: 1
-                  default: false
-                  options:
-                      '1': PLUGIN_ADMIN.YES
-                      '0': PLUGIN_ADMIN.NO
-                  validate:
-                      type: bool
-              header.swiper:
-                  type: toggle
-                  label: Swiper
-                  highlight: 1
-                  default: true
-                  options:
-                      '1': PLUGIN_ADMIN.YES
-                      '0': PLUGIN_ADMIN.NO
-                  validate:
-                      type: bool
+            header.bootstrap:
+              type: toggle
+              label: Bootstrap
+              highlight: false
+              default: false
+              options:
+                true: 'Ja'
+                false: 'Nein'
+              validate:
+                type: bool
+            header.swiper:
+              type: toggle
+              label: Bild-Swiper
+              highlight: false
+              default: false
+              options:
+                true: 'Ja'
+                false: 'Nein'
+              validate:
+                type: bool

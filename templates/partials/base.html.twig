@@ -25,6 +25,10 @@
     {% do assets.addJs('theme://dist/js/swiper-config.js', {group:'bottom'}) %}
     {% do assets.addJs('theme://dist/js/glightbox.js', {group:'bottom'}) %}
     {% do assets.addJs('theme://dist/js/glightbox-config.js', {group:'bottom'}) %}
+    {% if page.header.bootstrap == true %}
+        {% do assets.addJs('theme://dist/js/bootstrap.bundle.js', {group:'bottom'}) %}
+    {% endif %}
+    
 {% endblock %}
 
 {% block assets deferred %}
