@@ -31,3 +31,13 @@ form:
                 false: 'Nein'
               validate:
                 type: bool
+            header.image_icon:
+                type: toggle
+                label: Image Icon neben Headline
+                highlight: false
+                default: false
+                options:
+                  true: 'Ja'
+                  false: 'Nein'
+                validate:
+                  type: bool
