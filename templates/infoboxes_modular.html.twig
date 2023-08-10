@@ -14,9 +14,20 @@
                                 {% set hasPlatformChild = true %}
                             {% endif %}
                         {% endfor %}
+                    {% if hasSoftwareChild %}
+                        <div class="h4-wrapper">
+                            <h4>Software</h4>
+                        </div>
+                        {% for child in collection if 'software' in child.taxonomy.tag %}
+                            <a class="infoboxes__content__boxes__single-box infoboxes__content__boxes__single-box--services" href="{{ child.url }}">
+                                {% include 'partials/infoboxes_item.html.twig' with {'serivces':page, 'page':child, 'truncate':true} %}
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+
                     {% if hasPlatformChild %}
                         <div class="h4-wrapper">
-                            <h4>Platforms</h4>
+                            <h4>Plattformen</h4>
                         </div>
                         {% for child in collection if 'platform' in child.taxonomy.tag %}
                             <a class="infoboxes__content__boxes__single-box infoboxes__content__boxes__single-box--services" href="{{ child.url }}">
@@ -31,16 +42,6 @@
                                 {% set hasSoftwareChild = true %}
                             {% endif %}
                         {% endfor %}
-                    {% if hasSoftwareChild %}
-                        <div class="h4-wrapper">
-                            <h4>Software</h4>
-                        </div>
-                        {% for child in collection if 'software' in child.taxonomy.tag %}
-                            <a class="infoboxes__content__boxes__single-box infoboxes__content__boxes__single-box--services" href="{{ child.url }}">
-                                {% include 'partials/infoboxes_item.html.twig' with {'serivces':page, 'page':child, 'truncate':true} %}
-                            </a>
-                        {% endfor %}
-                    {% endif %}
 
                     {% set hasInfrastructureChild = false %}
                         {% for child in collection %}
@@ -50,7 +51,7 @@
                         {% endfor %}
                     {% if hasInfrastructureChild %}
                         <div class="h4-wrapper">
-                            <h4>Infrastructure</h4>
+                            <h4>Infrastruktur</h4>
                         </div>
                         {% for child in collection if 'infrastructure' in child.taxonomy.tag %}
                             <a class="infoboxes__content__boxes__single-box infoboxes__content__boxes__single-box--services" href="{{ child.url }}">
