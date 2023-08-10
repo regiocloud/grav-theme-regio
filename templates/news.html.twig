@@ -8,7 +8,7 @@
         <ul class="news__item-list">
             {% for child in collection %}
                 <li class="news__item-list__item-preview">
-                    {% include 'partials/blog_item.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
+                    {% include 'partials/news_item.html.twig' with {'news':page, 'page':child, 'truncate':true} %}
                 </li>
             {% endfor %}
         </ul>

@@ -1,0 +1,75 @@
+{% set collection = page.collection() %}
+
+{% block content %}
+    <section class="infoboxes">
+        <div class="infoboxes__content inside">
+            <div class="infoboxes__content__text">
+                {{ page.content|raw}}
+            </div>
+                {% if page.folder() ends with 'services' %}
+                    <ul class="infoboxes__content__boxes infoboxes__content__boxes--services">
+                    {% set hasPlatformChild = false %}
+                        {% for child in collection %}
+                            {% if 'platform' in child.taxonomy.tag %}
+                                {% set hasPlatformChild = true %}
+                            {% endif %}
+                        {% endfor %}
+                    {% if hasPlatformChild %}
+                        <div class="h4-wrapper">
+                            <h4>Platforms</h4>
+                        </div>
+                        {% for child in collection if 'platform' in child.taxonomy.tag %}
+                            <a class="infoboxes__content__boxes__single-box infoboxes__content__boxes__single-box--services" href="{{ child.url }}">
+                                {% include 'partials/infoboxes_item.html.twig' with {'serivces':page, 'page':child, 'truncate':true} %}
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% set hasSoftwareChild = false %}
+                        {% for child in collection %}
+                            {% if 'software' in child.taxonomy.tag %}
+                                {% set hasSoftwareChild = true %}
+                            {% endif %}
+                        {% endfor %}
+                    {% if hasSoftwareChild %}
+                        <div class="h4-wrapper">
+                            <h4>Software</h4>
+                        </div>
+                        {% for child in collection if 'software' in child.taxonomy.tag %}
+                            <a class="infoboxes__content__boxes__single-box infoboxes__content__boxes__single-box--services" href="{{ child.url }}">
+                                {% include 'partials/infoboxes_item.html.twig' with {'serivces':page, 'page':child, 'truncate':true} %}
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% set hasInfrastructureChild = false %}
+                        {% for child in collection %}
+                            {% if 'infrastructure' in child.taxonomy.tag %}
+                                {% set hasInfrastructureChild = true %}
+                            {% endif %}
+                        {% endfor %}
+                    {% if hasInfrastructureChild %}
+                        <div class="h4-wrapper">
+                            <h4>Infrastructure</h4>
+                        </div>
+                        {% for child in collection if 'infrastructure' in child.taxonomy.tag %}
+                            <a class="infoboxes__content__boxes__single-box infoboxes__content__boxes__single-box--services" href="{{ child.url }}">
+                                {% include 'partials/infoboxes_item.html.twig' with {'serivces':page, 'page':child, 'truncate':true} %}
+                            </a>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+
+
+                {% else %}
+                    <ul class="infoboxes__content__boxes infoboxes__content__boxes--services">
+                    {% for child in collection %}
+                        <li class="infoboxes__content__boxes__single-box">
+                            {% include 'partials/infoboxes_item.html.twig' with {'serivces':page, 'page':child, 'truncate':true} %}
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+        </div>
+    </section>
+{% endblock %}

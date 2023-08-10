@@ -1,0 +1,20 @@
+{% extends 'partials/base.html.twig' %}
+
+    {% set collection = page.find('/home/_services').collection() %}
+        
+{% block content %}
+    <section class="infoboxes">
+        <div class="infoboxes__content inside">
+            <div class="infoboxes__content__text">
+                {{ page.content|raw}}
+            </div>
+            <ul class="infoboxes__content__boxes">
+                {% for child in collection %}
+                    <li class="infoboxes__content__boxes__single-box">
+                        {% include 'partials/infoboxes_item.html.twig' with {'serivces':page, 'page':child, 'truncate':true} %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}

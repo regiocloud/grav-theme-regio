@@ -1,7 +1,9 @@
-{% extends "partials/base.html.twig"%}
+{% extends 'partials/base.html.twig' %}
 
 {% block content %}
-
-    {% include "partials/blog_item.html.twig" %}
-    
+    {% if page.parent.folder() ends with 'news' %}
+        {% include "partials/news_item.html.twig" %}
+    {% elseif page.parent.folder() ends with 'services' %}
+        {% include "partials/infoboxes_item.html.twig" %}
+    {% endif %} 
 {% endblock %}
