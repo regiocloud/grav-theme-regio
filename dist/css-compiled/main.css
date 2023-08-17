@@ -5284,12 +5284,16 @@ swiper-container .swiper-notification {
   color: rgb(18, 123, 172);
 }
 
-.infoboxes {
-  background: linear-gradient(180deg, rgba(121, 131, 140, 0.9) 0%, rgba(121, 131, 140, 0.9) 40%, rgba(0, 212, 255, 0) 100%);
-}
 .infoboxes .infoboxes__content__text {
   color: rgb(250, 252, 255);
   padding: 1rem 0;
+  color: rgb(73, 83, 91);
+}
+.infoboxes .infoboxes__content__text h2 {
+  color: rgb(18, 123, 172);
+}
+.infoboxes .infoboxes__content__text h3 {
+  color: rgb(73, 83, 91);
 }
 .infoboxes .infoboxes__content__boxes {
   display: flex;
@@ -5310,6 +5314,23 @@ swiper-container .swiper-notification {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
+}
+.infoboxes .infoboxes__content__boxes .infoboxes__content__boxes__single-box .infoboxes__content__boxes__single-box__button {
+  text-decoration: none;
+  color: rgb(18, 123, 172);
+  background-color: rgb(250, 252, 255);
+  border: 1px solid rgb(18, 123, 172);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: 450ms ease-in-out;
+}
+.infoboxes .infoboxes__content__boxes .infoboxes__content__boxes__single-box .infoboxes__content__boxes__single-box__button:hover {
+  background-color: rgb(18, 123, 172);
+  color: rgb(250, 252, 255) !important;
+}
+.infoboxes .infoboxes__content__boxes .infoboxes__content__boxes__single-box .infoboxes__content__boxes__single-box__text {
+  font-size: 1.5rem;
+  text-align: center;
 }
 .infoboxes .infoboxes__content__boxes .infoboxes__content__boxes__single-box img {
   width: 1.5rem;
@@ -5340,6 +5361,17 @@ swiper-container .swiper-notification {
   }
 }
 .infoboxes .infoboxes__content__boxes .infoboxes__content__boxes__single-box h4 {
+  color: rgb(18, 123, 172);
+}
+.infoboxes .infoboxes__content__boxes .infoboxes__content__boxes__single-box--last.infoboxes__content__boxes__single-box {
+  justify-content: center;
+  align-items: center;
+}
+.infoboxes .infoboxes__content__boxes .infoboxes__content__boxes__single-box--last.infoboxes__content__boxes__single-box:hover {
+  background-color: rgb(250, 252, 255);
+  color: rgb(73, 83, 91);
+}
+.infoboxes .infoboxes__content__boxes .infoboxes__content__boxes__single-box--last.infoboxes__content__boxes__single-box:hover a {
   color: rgb(18, 123, 172);
 }
 .infoboxes .infoboxes__content__boxes .infoboxes__content__boxes__single-box--services:hover, .infoboxes .infoboxes__content__boxes .infoboxes__content__boxes__single-box--services:focus {
@@ -5529,6 +5561,144 @@ swiper-container .swiper-notification {
 }
 .news__date-wrapper span {
   font-size: 0.75rem;
+}
+
+.services h1 {
+  padding: 0.5rem;
+}
+.services h2 {
+  color: rgb(18, 123, 172);
+  font-size: 1.25rem;
+}
+.services .services__content .services__content__boxes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box {
+  text-decoration: none;
+  color: rgb(73, 83, 91);
+  border-radius: 0.5rem;
+  background-color: rgb(250, 252, 255);
+  width: 20%;
+  min-height: 20vh;
+  margin: 1rem 0;
+  padding: 1rem;
+  box-shadow: 0 4px 10px 0 rgb(73, 83, 91);
+  transition: 450ms ease-in-out;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: baseline;
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box:hover, .services .services__content .services__content__boxes .services__content__boxes__single-box:focus {
+  background-color: rgb(18, 123, 172);
+  color: rgb(250, 252, 255);
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box:hover a, .services .services__content .services__content__boxes .services__content__boxes__single-box:focus a {
+  color: rgb(250, 252, 255);
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box:hover h3, .services .services__content .services__content__boxes .services__content__boxes__single-box:focus h3 {
+  color: rgb(250, 252, 255);
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box h3 {
+  margin: 0 0 1rem 0;
+  width: fit-content;
+  color: rgb(18, 123, 172);
+  transition: 450ms ease-in-out;
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box .services__content__boxes__single-box__button {
+  text-decoration: none;
+  color: rgb(18, 123, 172);
+  background-color: rgb(250, 252, 255);
+  border: 1px solid rgb(18, 123, 172);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: 450ms ease-in-out;
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box .services__content__boxes__single-box__button:hover {
+  background-color: rgb(18, 123, 172);
+  color: rgb(250, 252, 255) !important;
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box .services__content__boxes__single-box__text {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box h5 {
+  margin: 0;
+  color: rgb(18, 123, 172);
+  font-size: 1.25rem;
+  font-family: "greycliff-cf-bold";
+  transition: 450ms ease-in-out;
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box p {
+  width: 100%;
+  height: 100%;
+  color: rgb(73, 83, 91);
+  transition: 450ms ease-in-out;
+}
+@media screen and (max-width: 1000px) {
+  .services .services__content .services__content__boxes .services__content__boxes__single-box {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .services .services__content .services__content__boxes .services__content__boxes__single-box {
+    width: 100%;
+  }
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box h4 {
+  color: rgb(18, 123, 172);
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box--last.services__content__boxes__single-box {
+  justify-content: center;
+  align-items: center;
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box--last.services__content__boxes__single-box:hover {
+  background-color: rgb(250, 252, 255);
+  color: rgb(73, 83, 91);
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box--last.services__content__boxes__single-box:hover a {
+  color: rgb(18, 123, 172);
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box--services:hover, .services .services__content .services__content__boxes .services__content__boxes__single-box--services:focus {
+  background-color: rgb(18, 123, 172);
+  color: rgb(250, 252, 255);
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box--services:hover a, .services .services__content .services__content__boxes .services__content__boxes__single-box--services:focus a {
+  color: rgb(250, 252, 255);
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box--services:hover h4, .services .services__content .services__content__boxes .services__content__boxes__single-box--services:hover h5, .services .services__content .services__content__boxes .services__content__boxes__single-box--services:focus h4, .services .services__content .services__content__boxes .services__content__boxes__single-box--services:focus h5 {
+  color: rgb(250, 252, 255);
+}
+.services .services__content .services__content__boxes .services__content__boxes__single-box--services:hover p, .services .services__content .services__content__boxes .services__content__boxes__single-box--services:focus p {
+  color: rgb(250, 252, 255);
+}
+.services .services__content .services__content__boxes--services .h4-wrapper {
+  width: 100%;
+}
+.services .services__content .services__content__boxes--services .h4-wrapper h4 {
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0 0.5rem 0;
+  color: rgb(250, 252, 255);
+  background-color: rgb(18, 123, 172);
+}
+.services .contact--services {
+  margin-top: 5rem;
+}
+.services .contact--services h2 {
+  margin-bottom: 0;
+}
+.services .contact--services h3 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
 }
 
 .cc-window.cc-floating {

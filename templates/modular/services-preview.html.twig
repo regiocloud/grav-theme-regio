@@ -1,0 +1,4 @@
+<section id="{{ page.header.title }}" class="services inside">
+    {{ page.content | raw }}
+    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+</section>

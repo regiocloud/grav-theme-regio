@@ -1,20 +1,76 @@
 {% extends 'partials/base.html.twig' %}
 
-    {% set collection = page.find('/home/_services').collection() %}
-        
+{% set collection = page.collection() %}
+    
 {% block content %}
-    <section class="infoboxes">
-        <div class="infoboxes__content inside">
-            <div class="infoboxes__content__text">
-                {{ page.content|raw}}
-            </div>
-            <ul class="infoboxes__content__boxes">
-                {% for child in collection %}
-                    <li class="infoboxes__content__boxes__single-box">
-                        {% include 'partials/infoboxes_item.html.twig' with {'serivces':page, 'page':child, 'truncate':true} %}
-                    </li>
+    <article class="services inside">
+        <section class="services__content">
+            <h1>{{ page.title }}</h1>
+            {{ page.content|raw}}
+        </section>
+        {% set hasSoftwareChild = false %}
+        {% for child in collection %}
+            {% if 'software' in child.taxonomy.tag %}
+                {% set hasSoftwareChild = true %}
+            {% endif %}
+        {% endfor %}
+        {% if hasSoftwareChild %}
+            <section class="services__content">
+                <h2>Software</h2>
+                <p>Platzhalter Text, soll später im Backend anpassbar sein.</p>
+                <div class="services__content__boxes">
+                {% for child in collection|filter(child => 'software' in child.taxonomy.tag) %}
+                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
                 {% endfor %}
-            </ul>
-        </div>
-    </section>
+                </div>
+            </section>
+        {% endif %}
+        {% set hasPlatformChild = false %}
+        {% for child in collection %}
+            {% if 'platform' in child.taxonomy.tag %}
+                {% set hasPlatformChild = true %}
+            {% endif %}
+        {% endfor %}
+        {% if hasPlatformChild %}
+            <section class="services__content">
+                <h2>Plattformen</h2>
+                <p>Platzhalter Text, soll später im Backend anpassbar sein.</p>
+                <div class="services__content__boxes">
+                {% for child in collection|filter(child => 'platform' in child.taxonomy.tag) %}
+                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+        {% set hasInfrastructureChild = false %}
+        {% for child in collection %}
+            {% if 'infrastructure' in child.taxonomy.tag %}
+                {% set hasInfrastructureChild = true %}
+            {% endif %}
+        {% endfor %}
+        {% if hasInfrastructureChild %}
+            <section class="services__content">
+                <h2>Infrastruktur</h2>
+                <p>Platzhalter Text, soll später im Backend anpassbar sein.</p>
+                <div class="services__content__boxes">
+                {% for child in collection|filter(child => 'infrastructure' in child.taxonomy.tag) %}
+                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+        {% for child in collection %}
+            {% if child.folder() == 'contact' %}
+                <section class="contact contact--services">
+                    <div class="contact__content">
+                        <h2>{{ child.title }}</h2>
+                        {{ child.content}}
+                    </div>
+                    <div class="contact__form-wrapper">
+                        {% include "forms/form.html.twig" with {'childFrontmatter': page.header} %}
+                    </div>
+                </section>
+            {% endif %}
+        {% endfor %}
+    </article>
 {% endblock %}

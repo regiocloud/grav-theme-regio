@@ -1,8 +1,15 @@
 .infoboxes{
-    background: linear-gradient(180deg, rgba(121,131,140,0.9) 0%, rgba(121,131,140,0.9) 40%, rgba(0,212,255,0) 100%);
     .infoboxes__content__text{
         color: $color-white;
         padding: 1rem 0;
+        color: $color-dark-grey;
+
+        h2{
+            color: $color-blue;
+        }
+        h3{
+            color: $color-dark-grey;
+        }
     }
 
     .infoboxes__content__boxes{
@@ -25,6 +32,24 @@
             display: flex; 
             flex-wrap: wrap;
             justify-content: left;
+
+            .infoboxes__content__boxes__single-box__button{
+                text-decoration: none;
+                color: $color-blue;
+                background-color: $color-white;
+                border: 1px solid $color-blue;
+                padding: .5rem;
+                border-radius: $border-radius;
+                transition: $transition;
+                &:hover{
+                    background-color: $color-blue;
+                    color: $color-white!important;
+                }
+            }
+            .infoboxes__content__boxes__single-box__text{
+                font-size: 1.5rem;
+                text-align: center;
+            }
 
             img{
                 width: 1.5rem;
@@ -59,6 +84,17 @@
 
             h4{
                 color: $color-blue;
+            }
+        }
+        .infoboxes__content__boxes__single-box--last.infoboxes__content__boxes__single-box{
+            justify-content: center;
+            align-items: center;
+            &:hover{
+                background-color: $color-white;
+                color: $color-dark-grey;
+                a{
+                    color: $color-blue;
+                }
             }
         }
         .infoboxes__content__boxes__single-box--services{

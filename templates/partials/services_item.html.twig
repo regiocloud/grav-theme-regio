@@ -1,0 +1,11 @@
+{% if truncate %}
+    <a class="services__content__boxes__single-box" href="{{ child.url }}">
+        {{ page.media.files|first }}
+        {{ page.media.images|first }}
+        <h3>{{ page.title }}</h3>
+        {% set firstSentence = page.content|striptags|split('.')|first ~ '.' %}
+        <span>{{ firstSentence }}</span>
+    </a>
+{% else %}
+
+{% endif %}
