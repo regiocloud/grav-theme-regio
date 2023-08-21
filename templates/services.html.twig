@@ -20,7 +20,7 @@
                 <p>Platzhalter Text, soll später im Backend anpassbar sein.</p>
                 <div class="services__content__boxes">
                 {% for child in collection|filter(child => 'software' in child.taxonomy.tag) %}
-                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}
                 {% endfor %}
                 </div>
             </section>
@@ -37,7 +37,7 @@
                 <p>Platzhalter Text, soll später im Backend anpassbar sein.</p>
                 <div class="services__content__boxes">
                 {% for child in collection|filter(child => 'platform' in child.taxonomy.tag) %}
-                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}
                 {% endfor %}
                 </div>
             </section>
@@ -54,7 +54,7 @@
                 <p>Platzhalter Text, soll später im Backend anpassbar sein.</p>
                 <div class="services__content__boxes">
                 {% for child in collection|filter(child => 'infrastructure' in child.taxonomy.tag) %}
-                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}
                 {% endfor %}
                 </div>
             </section>

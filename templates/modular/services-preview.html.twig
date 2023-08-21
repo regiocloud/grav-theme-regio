@@ -1,4 +1,74 @@
-<section id="{{ page.header.title }}" class="services inside">
-    {{ page.content | raw }}
-    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+<section class="services inside">
+    <div class="services__content">
+        <h1>{{ page.title }}</h1>
+        {{ page.content|raw}}
+    </div>
+    {% set services_items = page.find('/services').children %}
+    {% set hasSoftwareChild = false %}
+    {% for child in services_items %}
+        {% if 'software' in child.taxonomy.tag %}
+            {% set hasSoftwareChild = true %}
+        {% endif %}
+    {% endfor %}
+    {% if hasSoftwareChild %}
+        <div class="services__content">
+            <h4>Software</h4>
+            <div class="services__content__boxes">
+            {% set software_children = services_items|filter(child => 'software' in child.taxonomy.tag) %}
+            {% set visible_children = software_children|slice(0, 3) %}
+            {% set remaining_children = software_children|slice(3) %}       
+            {% for child in visible_children %}
+                {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+            {% endfor %}   
+            {% if software_children|length == 4 %}
+                {% for child in remaining_children %}
+                        {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                {% endfor %}
+            {% elseif software_children|length > 4 %}
+                <div class="services__content__boxes__single-box services__content__boxes__single-box--last services__content__boxes__single-box--services">
+                    <span class="services__content__boxes__single-box__text">+ {{ remaining_children|length }} weitere Dienste verfügbar</span>
+                    <a href="/services" class="services__content__boxes__single-box__button">Zur Übersicht</a>
+                </div>
+            {% endif %}
+            </div>
+            <h4>Plattformen</h4>
+            <div class="services__content__boxes">
+            {% set platform_children = services_items|filter(child => 'platform' in child.taxonomy.tag) %}
+            {% set visible_children = platform_children|slice(0, 3) %}
+            {% set remaining_children = platform_children|slice(3) %}       
+            {% for child in visible_children %}
+                {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+            {% endfor %}   
+            {% if platform_children|length == 4 %}
+                {% for child in remaining_children %}
+                        {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                {% endfor %}
+            {% elseif platform_children|length > 4 %}
+                <div class="services__content__boxes__single-box services__content__boxes__single-box--last services__content__boxes__single-box--services">
+                    <span class="services__content__boxes__single-box__text">+ {{ remaining_children|length }} weitere Dienste verfügbar</span>
+                    <a href="/services" class="services__content__boxes__single-box__button">Zur Übersicht</a>
+                </div>
+            {% endif %}
+            </div>
+            <h4>Infrastruktur</h4>
+            <div class="services__content__boxes">
+            {% set infrastructure_children = services_items|filter(child => 'infrastructure' in child.taxonomy.tag) %}
+            {% set visible_children = infrastructure_children|slice(0, 3) %}
+            {% set remaining_children = infrastructure_children|slice(3) %}       
+            {% for child in visible_children %}
+                {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+            {% endfor %}   
+            {% if infrastructure_children|length == 4 %}
+                {% for child in remaining_children %}
+                        {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                {% endfor %}
+            {% elseif infrastructure_children|length > 4 %}
+                <div class="services__content__boxes__single-box services__content__boxes__single-box--last services__content__boxes__single-box--services">
+                    <span class="services__content__boxes__single-box__text">+ {{ remaining_children|length }} weitere Dienste verfügbar</span>
+                    <a href="/services" class="services__content__boxes__single-box__button">Zur Übersicht</a>
+                </div>
+            {% endif %}
+            </div>
+        </div>
+    {% endif %}
 </section>

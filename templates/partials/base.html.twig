@@ -53,6 +53,7 @@
     </footer>
 {% block bottom %}
     {{ assets.js('bottom')|raw }}
+    {% include "partials/noscript.html.twig" %}
 {% endblock %}
 </body>
 </html>
