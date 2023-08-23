@@ -10,6 +10,9 @@
 
     .contact__content{
         width: 49%;
+        h2{
+            margin-top: 0;
+        }
 
         @media screen and (max-width:$breakpoint){
             width: 100%;
@@ -56,6 +59,18 @@
                             font-size: $font-size-regular;
                             border: .5px solid;
                             border-radius: $border-radius;
+                        }
+                    }
+                    .form-select-wrapper{
+                        select{
+                            width: 100%;
+                            padding: 1rem;
+                            box-sizing: border-box;
+                            font-family: $font-family-regular;
+                            font-size: $font-size-regular;
+                            border: .5px solid;
+                            border-radius: $border-radius;
+                            background-color: $color-white;
                         }
                     }
                 }

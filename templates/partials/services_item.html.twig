@@ -1,68 +1,107 @@
 {% if truncate and not expanded %}
-    <a class="services__content__boxes__single-box" href="{{ child.url }}">
-        {{ page.media.files|first }}
-        {{ page.media.images|first }}
+    <div class="services__content__boxes__single-box">
+        {% for logo in page.media.files %}
+            {% if logo.basename|lower|contains('logo') %}
+                {{ logo }}
+            {% endif %}
+        {% endfor %}
+        {% for logo in page.media.images %}
+            {% if logo.basename|lower|contains('logo') %}
+                {{ logo }}
+            {% endif %}
+        {% endfor %}
         <h5>{{ page.title }}</h5>
         {% set firstSentence = page.content|striptags|split('.')|first ~ '.' %}
-        <span>{{ firstSentence }}</span>
-    </a>
+        <span class="services__content__boxes__single-box__summary">{{ firstSentence }}</span>
+        <a class="services__content__boxes__single-box__link" href="{{ child.url }}" title="{{ child.title }}"><i class="fa fa-chevron-right"></i>Weitere Informationen</a>
+    </div>
 {% elseif truncate and expanded %}
-    <a class="services__content__boxes__single-box" href="{{ child.url }}">
-        {{ page.media.files|first }}
-        {{ page.media.images|first }}
+    <div class="services__content__boxes__single-box">
+        {% for logo in page.media.files %}
+            {% if logo.basename|lower|contains('logo') %}
+                {{ logo }}
+            {% endif %}
+        {% endfor %}
+        {% for logo in page.media.images %}
+            {% if logo.basename|lower|contains('logo') %}
+                {{ logo }}
+            {% endif %}
+        {% endfor %}
         <h3>{{ page.title }}</h3>
         {% set firstSentence = page.content|striptags|split('.')|first ~ '.' %}
         <span>{{ firstSentence }}</span>
-    </a>
+        <a class="services__content__boxes__single-box__link" href="{{ child.url }}" title="{{ child.title }}"><i class="fa fa-chevron-right"></i>Weitere Informationen</a>
+    </div>
 {% else %}
-    <article class="default inside">
-        {% if config.plugins.breadcrumbs.enabled %}
-            {% include "partials/breadcrumbs.html.twig" %}
-        {% endif %}
-        <div class="default__headline-wrapper">
-            {% if page.header.image_icon == true %}
-                {% for svg in page.media.files %} {{ svg|raw }} {% endfor %}
-                {% for image in page.media.images %} {{ image|raw }} {% endfor %} 
-            {% endif %}
-            <h1>{{ page.title }}</h1>
-        </div>        
-        {{ page.content|raw }}
-        {% if page.header.swiper == true and (page.media.images or page.media.files) %}
-        <!-- Slider main container -->
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                {% for svg in page.media.files %}
-                    <div class="swiper-slide">
-                        {% if svg.metadata.lightbox == true %}
-                            <a class="glightbox" href="{{ svg.url }}" alt="{{ svg.metadata.alt }}">
-                                {{ svg|raw }}
-                            </a>
-                        {% else %}
-                        {{ svg|raw }}
-                        {% endif %}
-                    </div>
+    <article class="default">
+        <section class="services__banner">
+                {% for banner in page.media.files %}
+                    {% if banner.basename|lower|contains('banner') %}
+                        <div class="services__banner__image">{{ banner }}</div>
+                    {% endif %}
                 {% endfor %}
-                {% for image in page.media.images %}
-                    <div class="swiper-slide">
-                        {% if image.metadata.lightbox == true %}
-                            <a class="glightbox" href="{{ image.url }}" alt="{{ image.metadata.alt }}">
-                                {{ image|raw }}
+                {% for banner in page.media.images %}
+                    {% if banner.basename|lower|contains('banner') %}
+                        <div class="services__banner__image">{{ banner }}</div>
+                    {% endif %}
+                {% endfor %}
+            <div class="services__banner__content-wrapper inside">
+                <div class="services__banner__content">
+                    <h1>Grafana - leistungsstarke Plattform für die Überwachung
+                        und Visualisierung von Daten</h1>
+                    <p>
+                    <strong>Anmelden und sofort Zugriff auf 124 Services haben!</strong>
+                    <br>
+                    Durch REGIO erhalten Sie unmittelbaren Zugang zu einer breiten Palette sofort einsatzbereiter Dienstleistungen, die alle über unseren zentralen REGIO.login-Service miteinander verknüpft sind.</p>
+                    <div class="services__banner__content__button-wrapper">
+                        <div class="services__banner__content__button">
+                            <a href="#" rel="noopener">
+                                Registrieren
                             </a>
-                        {% else %}
-                        {{ image|raw }}
-                        {% endif %}
+                        </div>
                     </div>
+                    {# {% for cta in page.header.button %}
+                        <div class="services__banner__content__button-wrapper">
+                            <div class="services__banner__content__button ">
+                                <a href="{{ cta.link }}" title="{{ cta.name }}" rel="noopener" target="_blank">
+                                    {{ cta.content }}
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %} #}
+                </div>
+            </div>
+        </section>
+        <section class="services__item-content inside">
+            {% if config.plugins.breadcrumbs.enabled %}
+                {% include "partials/breadcrumbs.html.twig" %}
+            {% endif %}
+            {# {{ page.content|raw }} #}
+            <div class="infoboxes module">
+                <div class="infoboxes__content">
+                    <div class="infoboxes__content__text">
+                        <h2>Produkt Highlights</h2>
+                        <h3>Alle Vorteile auf einem Blick</h3>
+                    </div>
+                    <div class="infoboxes__content__boxes">
+                        {% for box in page.header.boxes %}
+                                <div class="infoboxes__content__boxes__single-box">
+                                    <h4> {{ box.title }} </h4>
+                                <p> {{ box.text }}</p>
+                                </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% if page.media.images %}
+                <h2>Produkt Screenshots</h2>
+                <h3>Screenshots von Grafana</h3>
+                <div class="services__item-content__images-wrapper">
+                {% for image in page.media.images %}
+                    <a class="services__item-content__image glightbox" href="{{ image.url }}"> {{ image|raw }}</a>
                 {% endfor %}
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-        </div>
-        {% endif %}
+            {% endif %}
+        </section>
     </article>
 {% endif %}
