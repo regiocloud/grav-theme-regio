@@ -1,9 +1,0 @@
-{% extends 'partials/base.html.twig' %}
-
-{% block content %}
-    {% if page.parent.folder() ends with 'news' %}
-        {% include "partials/news_item.html.twig" %}
-    {% elseif page.parent.folder() ends with 'services' %}
-        {% include "partials/services_item.html.twig" %}
-    {% endif %} 
-{% endblock %}

@@ -71,7 +71,7 @@
             {% endif %}
             <div class="services__item-content__image-text module">
                 <h2>Service Overview</h2>
-                <h3>Was ist {{ page.title }}</h3>
+                <h3>Was ist {{ page.title }}?</h3>
                 <div class="services__item-content__image-text__text">{{ page.content|raw}}</div>
                 {% for overview in page.media.images %}
                     {% if overview.basename|lower|contains('overview') %}
@@ -142,7 +142,7 @@
                 <div class="services__content">
                     <div class="services__content__boxes">
                         {% for child in page.parent.collection|filter(child => currentTag in child.taxonomy.tag and child!= page) %}
-                            {% include 'partials/services_item.html.twig' with { currentTag:page, 'page':child, 'truncate':true} %}
+                            {% include 'partials/service_item.html.twig' with { currentTag:page, 'page':child, 'truncate':true} %}
                         {% endfor %}
                     </div>
                 </div>

@@ -1,0 +1,79 @@
+title: Services
+'@extends':
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          type: tab
+          title: Content
+          fields:
+            info:
+              type: section
+              title: Bild für den Banner ganz oben muss im Dateinamen "banner" enthalten. Also z.B. "service_banner.jpg"
+              underline: true
+            info2:
+              type: section
+              title: Bilder die unter Screenshots angezeigt werden sollen, müssen im Dateinamen "screenshot" enthalten. Also z.B. "service_screenshot-1.jpg"
+              underline: true
+            info3:
+              type: section
+              title: Bild für Zitatmodul muss im Dateinamen "quote" enthalten. Also z.B. "service_quote.jpg"
+              underline: true
+            info4:
+              type: section
+              title: Bild das neben dem Overview Text erscheint muss im Dateinamen "overview" enthalten. Also z.B. "service_overview.jpg"
+              underline: true
+            header.banner:
+              type: list
+              label: Banner Inhalt
+              fields:
+                .headline:
+                  type: text
+                  label: Headline
+                .strong:
+                  type: text
+                  label: Strong Text
+                .details:
+                  type: textarea
+                  label: Details
+                .cta_link:
+                  type: text
+                  label: Button Link
+                .cta_name:
+                  type: text
+                  label: Button Name
+                .cta_content:
+                  type: text
+                  label: Button Content
+            header.boxes:
+                name: boxes
+                type: list
+                style: vertical
+                label: Highlight Boxen
+                fields:
+                    .title:
+                        type: text
+                        label: Titel
+                    .text:
+                        type: textarea
+                        label: Text
+                        size: long
+            header.quote:
+                name: quote
+                type: list
+                style: vertical
+                label: Zitat
+                fields:
+                    .content:
+                      type: textarea
+                      label: Zitat
+                    .author:
+                      type: text
+                      label: Autor
+  blueprints:
+    - default
+    - page

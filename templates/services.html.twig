@@ -47,7 +47,7 @@
                     <p class="services__content__topic-description">{{ page.header.topic_descriptions.software }}</p>
                 <div class="services__content__boxes">
                 {% for child in collection|filter(child => 'software' in child.taxonomy.tag) %}
-                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}
+                    {% include 'partials/service_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}
                 {% endfor %}
                 </div>
             </section>
@@ -64,7 +64,7 @@
                     <p class="services__content__topic-description">{{page.header.topic_descriptions.platforms}}</p>
                 <div class="services__content__boxes">
                 {% for child in collection|filter(child => 'platform' in child.taxonomy.tag) %}
-                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}
+                    {% include 'partials/service_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}
                 {% endfor %}
                 </div>
             </section>
@@ -81,7 +81,7 @@
                     <p class="services__content__topic-description">{{ page.header.topic_descriptions.infrastructure }}</p>
                 <div class="services__content__boxes">
                 {% for child in collection|filter(child => 'infrastructure' in child.taxonomy.tag) %}
-                    {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}
+                    {% include 'partials/service_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}
                 {% endfor %}
                 </div>
             </section>

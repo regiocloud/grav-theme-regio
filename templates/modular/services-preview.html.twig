@@ -19,11 +19,11 @@
             {% set visible_children = software_children|slice(0, 3) %}
             {% set remaining_children = software_children|slice(3) %}       
             {% for child in visible_children %}
-                {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                {% include 'partials/service_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
             {% endfor %}   
             {% if software_children|length == 4 %}
                 {% for child in remaining_children %}
-                        {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                        {% include 'partials/service_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
                 {% endfor %}
             {% elseif software_children|length > 4 %}
                 <div class="services__content__boxes__single-box services__content__boxes__single-box--last services__content__boxes__single-box--services">
@@ -38,11 +38,11 @@
             {% set visible_children = platform_children|slice(0, 3) %}
             {% set remaining_children = platform_children|slice(3) %}       
             {% for child in visible_children %}
-                {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                {% include 'partials/service_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
             {% endfor %}   
             {% if platform_children|length == 4 %}
                 {% for child in remaining_children %}
-                        {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                        {% include 'partials/service_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
                 {% endfor %}
             {% elseif platform_children|length > 4 %}
                 <div class="services__content__boxes__single-box services__content__boxes__single-box--last services__content__boxes__single-box--services">
@@ -57,11 +57,11 @@
             {% set visible_children = infrastructure_children|slice(0, 3) %}
             {% set remaining_children = infrastructure_children|slice(3) %}       
             {% for child in visible_children %}
-                {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                {% include 'partials/service_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
             {% endfor %}   
             {% if infrastructure_children|length == 4 %}
                 {% for child in remaining_children %}
-                        {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
+                        {% include 'partials/service_item.html.twig' with {'services':page, 'page':child, 'truncate':true} %}
                 {% endfor %}
             {% elseif infrastructure_children|length > 4 %}
                 <div class="services__content__boxes__single-box services__content__boxes__single-box--last services__content__boxes__single-box--services">
