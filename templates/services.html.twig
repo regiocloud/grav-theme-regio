@@ -16,23 +16,21 @@
         {% endfor %}
         <div class="services__banner__content-wrapper inside">
             <div class="services__banner__content">
-                {{ page.content|raw }}
-                <div class="services__banner__content__button-wrapper">
-                    <div class="services__banner__content__button">
-                        <a href="#" rel="noopener">
-                            Registrieren
-                        </a>
-                    </div>
-                </div>
-                {# {% for cta in page.header.button %}
+                {% for banner in page.header.banner %}
+                    <h1>{{ banner.headline }}</h1>
+                    <p>
+                        <strong>{{ banner.strong }}</strong>
+                        <br>
+                        {{ banner.details }}
+                    </p>
                     <div class="services__banner__content__button-wrapper">
                         <div class="services__banner__content__button ">
-                            <a href="{{ cta.link }}" title="{{ cta.name }}" rel="noopener" target="_blank">
-                                {{ cta.content }}
+                            <a href="{{ banner.cta_link }}" title="{{ banner.cta_name }}" rel="noopener" target="_blank">
+                                {{ banner.cta_content }}
                             </a>
                         </div>
                     </div>
-                {% endfor %} #}
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -46,11 +44,7 @@
         {% if hasSoftwareChild %}
             <section class="services__content">
                 <h2>Software</h2>
-                <p class="services__content__topic-description">Open Source-Software spielt eine entscheidende Rolle in der modernen Technologielandschaft. Sie fördert die Kollaboration und Innovation, indem sie den Quellcode für jedermann
-                    zugänglich macht. Dies ermöglicht es Entwicklern weltweit, gemeinsam an Projekten zu arbeiten, Fehler zu beheben, Funktionen hinzuzufügen und Anpassungen vorzunehmen. Open
-                    Source fördert Transparenz, Flexibilität und unabhängige Kontrolle über Technologien, was zu kosteneffizienten Lösungen führt. Es trägt auch zur Verbreitung bewährter Praktiken bei
-                    und beschleunigt die Entwicklung neuer Tools. Letztendlich stärkt Open Source-Software die Innovationskraft und demokratisiert den Zugang zu leistungsfähigen Technologien.
-                    Folgende Software bieten wie dafür an:</p>
+                    <p class="services__content__topic-description">{{ page.header.topic_descriptions.software }}</p>
                 <div class="services__content__boxes">
                 {% for child in collection|filter(child => 'software' in child.taxonomy.tag) %}
                     {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}
@@ -67,7 +61,7 @@
         {% if hasPlatformChild %}
             <section class="services__content">
                 <h2>Plattformen</h2>
-                <p class="services__content__topic-description">Plattformen sind essenzielle Bausteine der modernen IT-Landschaft. Sie bieten eine stabile und skalierbare Grundlage für die Entwicklung, Bereitstellung und Verwaltung von Anwendungen und Diensten. Diese Plattformen ermöglichen es Unternehmen, effizienter zu arbeiten, indem sie Ressourcen optimieren, die Zusammenarbeit erleichtern und die Time-to-Market für neue Produkte verkürzen. Dabei reicht die Bandbreite von Cloud-Plattformen wie AWS, Azure und Google Cloud bis hin zu Open-Source-Lösungen wie Kubernetes und Docker. Durch die Nutzung von Software-Plattformen können Organisationen flexibler auf sich ändernde Marktbedingungen reagieren und Innovationen schneller vorantreiben.</p>
+                    <p class="services__content__topic-description">{{page.header.topic_descriptions.platforms}}</p>
                 <div class="services__content__boxes">
                 {% for child in collection|filter(child => 'platform' in child.taxonomy.tag) %}
                     {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}
@@ -84,7 +78,7 @@
         {% if hasInfrastructureChild %}
             <section class="services__content">
                 <h2>Infrastruktur</h2>
-                <p class="services__content__topic-description">Infrastruktur im Kontext von Servern und IT-Systemen bildet das Rückgrat moderner Technologie. Sie umfasst physische und virtuelle Komponenten, die notwendig sind, um Daten und Anwendungen zu speichern, zu verarbeiten und bereitzustellen. Dies schließt Hardware wie Server, Speichergeräte und Netzwerkinfrastruktur sowie Software für die Verwaltung und Sicherheit der Systeme ein. Eine robuste und skalierbare Infrastruktur ist entscheidend, um die Zuverlässigkeit, Leistung und Sicherheit von Servern und Anwendungen zu gewährleisten. Sie ermöglicht Unternehmen und Organisationen, ihre IT-Ressourcen effizient zu nutzen und ihre digitale Präsenz erfolgreich aufzubauen und zu erweitern.</p>
+                    <p class="services__content__topic-description">{{ page.header.topic_descriptions.infrastructure }}</p>
                 <div class="services__content__boxes">
                 {% for child in collection|filter(child => 'infrastructure' in child.taxonomy.tag) %}
                     {% include 'partials/services_item.html.twig' with {'services':page, 'page':child, 'truncate':true, 'expanded':true} %}

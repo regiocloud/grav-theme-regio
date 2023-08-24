@@ -1,0 +1,55 @@
+title: Services
+'@extends':
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          type: tab
+          title: Content
+          fields:
+            header.banner:
+              type: list
+              label: Banner
+              fields:
+                .headline:
+                  type: text
+                  label: Headline
+                .strong:
+                  type: text
+                  label: Strong Text
+                .details:
+                  type: textarea
+                  label: Details
+                .cta_link:
+                  type: text
+                  label: Button Link
+                .cta_name:
+                  type: text
+                  label: Button Name
+                .cta_content:
+                  type: text
+                  label: Button Content
+            header.topic_descriptions:
+              type: section
+              title: Topic Descriptions
+              underline: true
+              fields:
+                header.topic_descriptions.software:
+                  type: text
+                  title: Software
+                  label: Software
+                header.topic_descriptions.platforms:
+                  type: text
+                  title: Plattformen
+                  label: Plattformen
+                header.topic_descriptions.infrastructure:
+                  type: text
+                  title: Infrastruktur
+                  label: Infrastruktur              
+  blueprints:
+    - default
+    - page
