@@ -5318,10 +5318,9 @@ swiper-container .swiper-notification {
   border-radius: 0.5rem;
   background-color: rgb(250, 252, 255);
   width: 20%;
-  min-height: 20vh;
   margin: 1rem 0;
   padding: 1rem;
-  box-shadow: 0 4px 10px 0 rgb(73, 83, 91);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.16);
   transition: 450ms ease-in-out;
   text-decoration: none;
   display: flex;
@@ -5614,7 +5613,7 @@ swiper-container .swiper-notification {
   min-height: 20vh;
   margin: 1rem 0;
   padding: 1rem;
-  box-shadow: 0 4px 10px 0 rgb(73, 83, 91);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.16);
   transition: 450ms ease-in-out;
   display: flex;
   flex-wrap: wrap;
@@ -5745,7 +5744,7 @@ swiper-container .swiper-notification {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  filter: opacity(0.03);
+  filter: opacity(0.08);
 }
 .services__banner .services__banner__content-wrapper {
   height: 100%;
@@ -5800,6 +5799,22 @@ swiper-container .swiper-notification {
   background-color: rgb(18, 123, 172);
 }
 
+.services__item-content .services__item-content__image-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.services__item-content .services__item-content__image-text .services__item-content__image-text__text, .services__item-content .services__item-content__image-text .services__item-content__image-text__image {
+  width: 49%;
+}
+@media screen and (max-width: 1000px) {
+  .services__item-content .services__item-content__image-text .services__item-content__image-text__text, .services__item-content .services__item-content__image-text .services__item-content__image-text__image {
+    width: 100%;
+  }
+}
+.services__item-content .services__item-content__image-text .services__item-content__image-text__text img, .services__item-content .services__item-content__image-text .services__item-content__image-text__image img {
+  width: 100%;
+}
 .services__item-content h2 {
   text-transform: uppercase;
   color: rgb(18, 123, 172);

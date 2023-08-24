@@ -33,7 +33,7 @@
         <a class="services__content__boxes__single-box__link" href="{{ child.url }}" title="{{ child.title }}"><i class="fa fa-chevron-right"></i>Weitere Informationen</a>
     </div>
 {% else %}
-    <article class="default">
+    <article class="services">
         <section class="services__banner">
                 {% for banner in page.media.files %}
                     {% if banner.basename|lower|contains('banner') %}
@@ -47,28 +47,21 @@
                 {% endfor %}
             <div class="services__banner__content-wrapper inside">
                 <div class="services__banner__content">
-                    <h1>Grafana - leistungsstarke Plattform für die Überwachung
-                        und Visualisierung von Daten</h1>
-                    <p>
-                    <strong>Anmelden und sofort Zugriff auf 124 Services haben!</strong>
-                    <br>
-                    Durch REGIO erhalten Sie unmittelbaren Zugang zu einer breiten Palette sofort einsatzbereiter Dienstleistungen, die alle über unseren zentralen REGIO.login-Service miteinander verknüpft sind.</p>
-                    <div class="services__banner__content__button-wrapper">
-                        <div class="services__banner__content__button">
-                            <a href="#" rel="noopener">
-                                Registrieren
-                            </a>
-                        </div>
-                    </div>
-                    {# {% for cta in page.header.button %}
+                    {% for banner in page.header.banner %}
+                        <h1>{{ banner.headline }}</h1>
+                        <p>
+                            <strong>{{ banner.strong }}</strong>
+                            <br>
+                            {{ banner.details }}
+                        </p>
                         <div class="services__banner__content__button-wrapper">
                             <div class="services__banner__content__button ">
-                                <a href="{{ cta.link }}" title="{{ cta.name }}" rel="noopener" target="_blank">
-                                    {{ cta.content }}
+                                <a href="{{ banner.cta_link }}" title="{{ banner.cta_name }}" rel="noopener" target="_blank">
+                                    {{ banner.cta_content }}
                                 </a>
                             </div>
                         </div>
-                    {% endfor %} #}
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -76,11 +69,21 @@
             {% if config.plugins.breadcrumbs.enabled %}
                 {% include "partials/breadcrumbs.html.twig" %}
             {% endif %}
-            {# {{ page.content|raw }} #}
+            <div class="services__item-content__image-text module">
+                <h2>Service Overview</h2>
+                <h3>Was ist {{ page.title }}</h3>
+                <div class="services__item-content__image-text__text">{{ page.content|raw}}</div>
+                {% for overview in page.media.images %}
+                    {% if overview.basename|lower|contains('overview') %}
+                        <a class="services__item-content__image-text__image glightbox" href="{{ overview.url }}">{{ overview }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
             <div class="infoboxes module">
                 <div class="infoboxes__content">
                     <div class="infoboxes__content__text">
-                        <h2>Produkt Highlights</h2>
+                        <h2>Service Highlights</h2>
                         <h3>Alle Vorteile auf einem Blick</h3>
                     </div>
                     <div class="infoboxes__content__boxes">
@@ -93,15 +96,58 @@
                     </div>
                 </div>
             </div>
-            {% if page.media.images %}
-                <h2>Produkt Screenshots</h2>
-                <h3>Screenshots von Grafana</h3>
-                <div class="services__item-content__images-wrapper">
-                {% for image in page.media.images %}
-                    <a class="services__item-content__image glightbox" href="{{ image.url }}"> {{ image|raw }}</a>
+            <h2>Service Screenshots</h2>
+            <h3>Screenshots von {{ page.title }}</h3>
+            <div class="services__item-content__images-wrapper module">
+                {% for screenshot in page.media.images %}
+                    {% if screenshot.basename|lower|contains('screenshot') %}
+                        <a class="services__item-content__image glightbox" href="{{ screenshot.url }}">{{ screenshot }}</a>
+                    {% endif %}
                 {% endfor %}
+            </div>
+            <div class="services__quote module">
+                <h2>Success-Story</h2>
+                <h3>Was sagen andere Anwender?</h3>
+                <div class="quote">
+                    {% for quote in page.media.images %}
+                        {% if quote.basename|lower|contains('quote') %}
+                            <div class="quote__image">
+                                {{ quote }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    {% for quote in page.header.quote %}
+                        <div class="quote__content">
+                            {{ quote.content }}
+                            <p class="quote__content__author">- {{quote.author}}</p>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endif %}
+            </div>
+            <div class="services__pricing module">
+            <h2>Pricing</h2>
+            <h3>Preise und Bezahloptionen</h3>
+            </div>
+            <div class="services__support module">
+                <h2>Support</h2>
+                <h3>Service und Support</h3>
+            </div>
+
+            <h2>F.A.Q</h2>
+            <h3>Häufig gestellte Fragen zu {{ page.title }}</h3>
+            <div class="services__matches module">
+                {% set currentTag = page.taxonomy.tag|first %}
+                <h2>{{currentTag}}</h2>
+                <h3>Services, die mit {{ page.title }} super zusammen funktionieren</h3>
+                <div class="services__content">
+                    <div class="services__content__boxes">
+                        {% for child in page.parent.collection|filter(child => currentTag in child.taxonomy.tag and child!= page) %}
+                            {% include 'partials/services_item.html.twig' with { currentTag:page, 'page':child, 'truncate':true} %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+                
         </section>
     </article>
 {% endif %}

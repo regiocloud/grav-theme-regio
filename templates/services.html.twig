@@ -4,8 +4,15 @@
     
 {% block content %}
     <div class="services__banner">
-        {% for image in page.media.images %}
-            <div class="services__banner__image">{{ image|raw }}</div>
+        {% for banner in page.media.files %}
+            {% if banner.basename|lower|contains('banner') %}
+                <div class="services__banner__image">{{ banner }}</div>
+            {% endif %}
+        {% endfor %}
+        {% for banner in page.media.images %}
+            {% if banner.basename|lower|contains('banner') %}
+                <div class="services__banner__image">{{ banner }}</div>
+            {% endif %}
         {% endfor %}
         <div class="services__banner__content-wrapper inside">
             <div class="services__banner__content">

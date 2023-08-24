@@ -12,6 +12,7 @@
     }
 
     .services__content{
+        
         h4{
             color: $color-blue;
             margin: 1rem 0 0 0;
@@ -36,7 +37,7 @@
                 min-height: 20vh; 
                 margin: 1rem 0;
                 padding: 1rem;
-                box-shadow: 0 4px 10px 0 $color-dark-grey;
+                box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.16);
                 transition: $transition;
                 display: flex; 
                 flex-wrap: wrap;
@@ -185,7 +186,7 @@
             height: 100%;
             width: 100%;
             object-fit: cover;
-            filter: opacity(.03);
+            filter: opacity(.08);
         }
     }
 
@@ -251,6 +252,20 @@
     }
 }
 .services__item-content{
+    .services__item-content__image-text{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .services__item-content__image-text__text, .services__item-content__image-text__image{
+            width: 49%;
+            @media screen and (max-width: $breakpoint) {
+                width: 100%;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
     h2{
         text-transform: uppercase;
         color: $color-blue;
